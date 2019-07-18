@@ -10,7 +10,7 @@ page = Nokogiri::HTML(open(PAGE_URL))
 #Donne les adresses mail
 def get_townhall_email(page)
     name = page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
-    return name
+    puts name
 end
 
 #Donne les villes
