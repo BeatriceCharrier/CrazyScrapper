@@ -20,7 +20,6 @@ end
 def list_crypto(page)
     list_crypto = Array.new
     
-
     #page.xpath('//*[@id="currencies-all"]/tbody/tr').length.
     #A la place de 10.times mais c'est très long
     10.times do |i|
@@ -54,7 +53,7 @@ end
 
 def perform(page)
     puts "Salut, alors j'ai 2 versions pour toi."
-    puts "1: Version simple pour les noobs"
+    puts "1: Version simple simple "
     puts "2: Version Badass !"
     input = 0
     
