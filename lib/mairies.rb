@@ -15,16 +15,10 @@ end
 
 #Donne les villes
 def get_townhall_urls(page)
-    list = Array.new
-    page.xpath('//a[starts-with(@href, "./")]').each do |town|
-        list << town
+    page.xpath('//*[@class="lientxt"]').each do |town|
+        new_page = Nokogiri::HTML(open("https://www.annuaire-des-mairies.com/#{town['href']}"))
+        get_townhall_email(new_page)
     end
-    return list
 end
 
-#puts get_townhall_email(page)
-puts get_townhall_urls(page)
-
-#<a class="lientxt" href="./95/ableiges.html">ABLEIGES</a>
-
-#"https://www.annuaire-des-mairies.com/"+"/95/ableiges.html"
+get_townhall_urls(page)
